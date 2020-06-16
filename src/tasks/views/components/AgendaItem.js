@@ -17,6 +17,8 @@ import {useContext} from 'react';
 const TaskItem = ({
   item,
   index,
+  isActive,
+  onLongPress,
   onPress,
   onComplete,
   onStart,
@@ -53,17 +55,25 @@ const TaskItem = ({
         testID={'TaskItem'}
         style={
           active
-            ? [styles.card, {borderColor: themeContext.colour.hex}]
+            ? [
+                styles.card,
+                {
+                  borderColor: themeContext.colour.hex,
+                  opacity: isActive ? 0.5 : 1,
+                },
+              ]
             : checked
             ? [
                 styles.card,
                 {
                   borderColor:
                     themeContext.theme === 'dark' ? '#222B45' : '#fff',
+                  opacity: isActive ? 0.5 : 1,
                 },
               ]
-            : styles.card
+            : [styles.card, {opacity: isActive ? 0.5 : 1}]
         }
+        onLongPress={onLongPress}
         onPress={onPress}>
         <Layout style={styles.row}>
           <Layout style={styles.column1}>

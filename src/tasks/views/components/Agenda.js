@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {SectionContext} from '../../context/section-context';
 import {List, Layout, StyleService, useStyleSheet} from '@ui-kitten/components';
+import DraggableFlatList from 'react-native-draggable-flatlist';
 import AgendaItem from '../components/AgendaItem';
 import CurrentTask from '../components/CurrentTask';
 
@@ -13,6 +14,7 @@ export default ({
   currentItem,
   timeTotals,
 }) => {
+  const [list, setList] = useState(items);
   const styles = useStyleSheet(themedStyles);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const onItemPress = (index) => {
@@ -27,9 +29,10 @@ export default ({
     if (navigation.isFocused()) {
       context.setSection('agenda');
     }
-  });
+    setList(items);
+  }, [items]);
   //method to render each item in the list
-  const renderItem = ({index, item}) => {
+  const renderItem = ({index, item, drag, isActive}) => {
     // if there is a current item that is this item, set the totalTimes index to this item
     if (currentItem && item.id === currentItem.id) {
       setCurrentIndex(index);
@@ -38,6 +41,8 @@ export default ({
       <AgendaItem
         item={item}
         index={index}
+        isActive={isActive}
+        onLongPress={drag}
         onPress={() => onItemPress(index)}
         onComplete={setTaskCompletion}
         onStart={startTask}
@@ -58,11 +63,17 @@ export default ({
           stopTask={startTask}
         />
       ) : null}
-      <List
+      {/* <List
         style={[styles.list, contentContainerStyle]}
         numColumns={1}
         data={items}
         renderItem={renderItem}
+      /> */}
+      <DraggableFlatList
+        data={list}
+        renderItem={renderItem}
+        keyExtractor={(item, index) => `draggable-item-${item.id}`}
+        onDragEnd={({data}) => setList(data)}
       />
     </Layout>
   );
