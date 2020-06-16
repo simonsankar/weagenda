@@ -148,6 +148,7 @@ const themedStyles = StyleService.create({
     flex: 1,
     backgroundColor: '$background-basic-color-2',
     padding: 16,
+    overflow: 'visible',
   },
   row: {
     display: 'flex',
@@ -157,6 +158,7 @@ const themedStyles = StyleService.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: 'transparent',
+    overflow: 'visible',
   },
   coloursRow: {
     display: 'flex',

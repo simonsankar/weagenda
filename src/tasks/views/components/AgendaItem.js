@@ -68,7 +68,7 @@ const TaskItem = ({
                 {
                   borderColor:
                     themeContext.theme === 'dark' ? '#222B45' : '#fff',
-                  opacity: isActive ? 0.5 : 1,
+                  opacity: isActive === true ? 0.5 : 1,
                 },
               ]
             : [styles.card, {opacity: isActive ? 0.5 : 1}]
