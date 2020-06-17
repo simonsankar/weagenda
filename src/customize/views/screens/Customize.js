@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {ScrollView, Linking, Platform} from 'react-native';
+import React, {useContext} from 'react';
+import {ThemeContext} from '../../../../theme.context';
 import {
   Button,
   Layout,
@@ -10,11 +10,12 @@ import {
   Modal,
 } from '@ui-kitten/components';
 import TopBar from '../components/TopBar';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faGithub} from '@fortawesome/free-brands-svg-icons';
 
 export default ({navigation, route}) => {
+  const themeContext = useContext(ThemeContext);
   const styles = useStyleSheet(themedStyles);
   let [visible, toggleVisible] = useState(false);
 
@@ -93,10 +94,11 @@ const themedStyles = StyleService.create({
   row: {
     display: 'flex',
     flex: 1,
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     padding: 16,
   },
   column: {
+    flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',

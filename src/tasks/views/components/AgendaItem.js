@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {ThemeContext} from '../../../../theme.context';
+
 import {
   Text,
   Card,
@@ -10,10 +12,13 @@ import {
 } from '@ui-kitten/components';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPlay} from '@fortawesome/free-solid-svg-icons';
+import {useContext} from 'react';
 
 const TaskItem = ({
   item,
   index,
+  isActive,
+  onLongPress,
   onPress,
   onComplete,
   onStart,
@@ -21,6 +26,7 @@ const TaskItem = ({
   timeSpentToday,
   active,
 }) => {
+  const themeContext = useContext(ThemeContext);
   const [checked, toggleCheck] = useState(item.complete);
   const styles = useStyleSheet(themedStyles);
   let currentTimeSpent = {
@@ -49,11 +55,25 @@ const TaskItem = ({
         testID={'TaskItem'}
         style={
           active
-            ? [styles.card, styles.active.card]
+            ? [
+                styles.card,
+                {
+                  borderColor: themeContext.colour.hex,
+                  opacity: isActive ? 0.5 : 1,
+                },
+              ]
             : checked
-            ? [styles.card, styles.checked.card]
-            : styles.card
+            ? [
+                styles.card,
+                {
+                  borderColor:
+                    themeContext.theme === 'dark' ? '#222B45' : '#fff',
+                  opacity: isActive === true ? 0.5 : 1,
+                },
+              ]
+            : [styles.card, {opacity: isActive ? 0.5 : 1}]
         }
+        onLongPress={onLongPress}
         onPress={onPress}>
         <Layout style={styles.row}>
           <Layout style={styles.column1}>
@@ -88,7 +108,7 @@ const TaskItem = ({
                 onStart(item.id);
                 setCurrentIndex(index);
               }}>
-              <FontAwesomeIcon icon={faPlay} color="#4381FF" />
+              <FontAwesomeIcon icon={faPlay} color={themeContext.colour.hex} />
             </Button>
             <Text status="primary" category="c1" style={styles.estimatedTime}>
               {estimatedTime.hours > 0 ? `${estimatedTime.hours}h ` : null}
@@ -162,11 +182,6 @@ const themedStyles = StyleService.create({
   },
 
   // States
-  active: {
-    card: {
-      borderColor: '#4381FF',
-    },
-  },
   checked: {
     title: {
       textDecorationLine: 'line-through',

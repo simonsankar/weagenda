@@ -1,13 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, SafeAreaView} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 import {
   Avatar,
   Divider,
   Drawer,
-  DrawerElement,
   DrawerItem,
   Layout,
-  MenuItemType,
   Text,
   StyleService,
   useStyleSheet,
@@ -17,11 +15,10 @@ import {
   ClockIcon,
   QuestionIcon,
   GridIcon,
-  ReportIcon,
   SettingsIcon,
-  SupportIcon,
 } from './Icons';
 
+let initialRender = true;
 export default ({navigation}) => {
   const styles = useStyleSheet(themedStyles);
   const onItemSelect = (index) => {
@@ -83,22 +80,27 @@ export default ({navigation}) => {
     </React.Fragment>
   );
 
-  return (
-    <SafeAreaView style={styles.safeArea} insets="top">
-      <Drawer
-        header={renderHeader}
-        footer={renderFooter}
-        onSelect={onItemSelect}>
-        <DrawerItem title={'Agenda'} accessoryLeft={AssetCalendarIcon} />
-        <DrawerItem title={'Time Log'} accessoryLeft={ClockIcon} />
-        {/* <DrawerItem title={'Reports'} accessoryLeft={ReportIcon} /> */}
-        <Divider />
-        <DrawerItem title={'Settings'} accessoryLeft={SettingsIcon} />
-        <DrawerItem title={'Customize'} accessoryLeft={GridIcon} />
-        <DrawerItem title={'About'} accessoryLeft={QuestionIcon} />
-      </Drawer>
-    </SafeAreaView>
-  );
+  if (initialRender) {
+    initialRender = false;
+    return null;
+  } else {
+    return (
+      <SafeAreaView style={styles.safeArea} insets="top">
+        <Drawer
+          header={renderHeader}
+          footer={renderFooter}
+          onSelect={onItemSelect}>
+          <DrawerItem title={'Agenda'} accessoryLeft={AssetCalendarIcon} />
+          <DrawerItem title={'Time Log'} accessoryLeft={ClockIcon} />
+          {/* <DrawerItem title={'Reports'} accessoryLeft={ReportIcon} /> */}
+          <Divider />
+          <DrawerItem title={'Settings'} accessoryLeft={SettingsIcon} />
+          <DrawerItem title={'Customize'} accessoryLeft={GridIcon} />
+          <DrawerItem title={'About'} accessoryLeft={QuestionIcon} />
+        </Drawer>
+      </SafeAreaView>
+    );
+  }
 };
 
 const themedStyles = StyleService.create({
@@ -109,7 +111,7 @@ const themedStyles = StyleService.create({
     paddingVertical: 32,
     paddingHorizontal: 16,
     justifyContent: 'center',
-    // backgroundColor: '$color-primary-500',
+    backgroundColor: '$background-basic-color-2',
   },
   profileContainer: {
     flexDirection: 'row',

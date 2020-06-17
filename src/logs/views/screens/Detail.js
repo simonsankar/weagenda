@@ -145,6 +145,7 @@ export default ({
               value={form.title}
               placeholder="Enter text for entry here"
               style={[styles.autocomplete, styles.input]}
+              size="large"
               status={!valid.taskId && 'danger'}
               captionIcon={!valid.taskId && AlertIcon}
               caption={!valid.taskId && 'Provide a valid task'}
@@ -158,6 +159,7 @@ export default ({
                 <Input
                   testID="LoggedHour"
                   style={styles.input}
+                  size="large"
                   label="Hour"
                   value={form.hours}
                   status={!valid.hours && 'danger'}
@@ -174,6 +176,7 @@ export default ({
                 <Input
                   testID="LoggedMinute"
                   style={styles.input}
+                  size="large"
                   label="Minute"
                   value={form.minutes}
                   status={!valid.minutes && 'danger'}
@@ -190,7 +193,6 @@ export default ({
                 <Select
                   size="large"
                   testID="LoggedAMPM"
-                  style={styles.input}
                   label=" "
                   accessoryRight={ClockIcon}
                   value={timeOfDay[form.timeOfDay.row]}

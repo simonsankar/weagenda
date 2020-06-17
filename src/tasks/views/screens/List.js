@@ -2,6 +2,7 @@ import React from 'react';
 import {TabBar, Tab, StyleService, useStyleSheet} from '@ui-kitten/components';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import AgendaController from '../../controllers/Agenda';
+import AgendaHOC from '../../controllers/AgendaHOC';
 import Agenda from '../components/Agenda';
 import Backlog from '../components/Backlog';
 import TopBar from '../components/TopBar';
@@ -26,16 +27,15 @@ export default (props) => {
     </TabBar>
   );
 
+  const WrappedAgenda = (props) => AgendaHOC(Agenda, props);
+
   return (
     <>
       <TopBar navigation={navigation} />
       <Tabs.Navigator
         tabBar={(props) => <TopTabBar {...props} />}
         screenOptions={{gestureEnabled: false}}>
-        <Tabs.Screen
-          name="Today"
-          component={Component(new AgendaController(), Agenda)}
-        />
+        <Tabs.Screen name="Today" component={WrappedAgenda} />
         <Tabs.Screen
           name="Backlog"
           component={Component(new BacklogController(), Backlog)}

@@ -9,6 +9,7 @@ import {
   useStyleSheet,
   Button,
 } from '@ui-kitten/components';
+import DraggableFlatList from 'react-native-draggable-flatlist';
 import AgendaItem from '../components/AgendaItem';
 import CurrentTask from '../components/CurrentTask';
 
@@ -42,6 +43,8 @@ export default ({
   const [placeholder, setPlaceholder] = useState(
     messages[Math.floor(Math.random() * messages.length)],
   );
+  console.log(navigation, startTask);
+  const [list, setList] = useState(items);
   const styles = useStyleSheet(themedStyles);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const onItemPress = (index) => {
@@ -56,9 +59,10 @@ export default ({
     if (navigation.isFocused()) {
       context.setSection('agenda');
     }
-  });
+    setList(items);
+  }, [items]);
   //method to render each item in the list
-  const renderItem = ({index, item}) => {
+  const renderItem = ({index, item, drag, isActive}) => {
     // if there is a current item that is this item, set the totalTimes index to this item
     if (currentItem && item.id === currentItem.id) {
       setCurrentIndex(index);
@@ -67,6 +71,8 @@ export default ({
       <AgendaItem
         item={item}
         index={index}
+        isActive={isActive}
+        onLongPress={drag}
         onPress={() => onItemPress(index)}
         onComplete={setTaskCompletion}
         onStart={startTask}
