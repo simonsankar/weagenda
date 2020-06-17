@@ -14,6 +14,7 @@ export default ({
   currentItem,
   timeTotals,
 }) => {
+  console.log(navigation, startTask);
   const [list, setList] = useState(items);
   const styles = useStyleSheet(themedStyles);
   const [currentIndex, setCurrentIndex] = useState(-1);
