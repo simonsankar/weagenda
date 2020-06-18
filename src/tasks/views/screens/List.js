@@ -1,12 +1,11 @@
 import React from 'react';
 import {TabBar, Tab, StyleService, useStyleSheet} from '@ui-kitten/components';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import AgendaController from '../../controllers/Agenda';
-import Agenda from '../components/Agenda';
-import Backlog from '../components/Backlog';
 import TopBar from '../components/TopBar';
-import {Component} from '../../../weosHelpers';
-import BacklogController from '../../controllers/Backlog';
+import AgendaHOC from '../../controllers/AgendaHOC';
+import Agenda from '../components/Agenda';
+import BacklogHOC from '../../controllers/BacklogHOC';
+import Backlog from '../components/Backlog';
 
 export default (props) => {
   const styles = useStyleSheet(themedStyles);
@@ -26,20 +25,16 @@ export default (props) => {
     </TabBar>
   );
 
+  const WrappedAgenda = (props) => AgendaHOC(Agenda, props);
+  const WrappedBacklog = (props) => BacklogHOC(Backlog, props);
   return (
     <>
       <TopBar navigation={navigation} />
       <Tabs.Navigator
         tabBar={(props) => <TopTabBar {...props} />}
         screenOptions={{gestureEnabled: false}}>
-        <Tabs.Screen
-          name="Today"
-          component={Component(new AgendaController(), Agenda)}
-        />
-        <Tabs.Screen
-          name="Backlog"
-          component={Component(new BacklogController(), Backlog)}
-        />
+        <Tabs.Screen name="Today" component={WrappedAgenda} />
+        <Tabs.Screen name="Backlog" component={WrappedBacklog} />
       </Tabs.Navigator>
     </>
   );
