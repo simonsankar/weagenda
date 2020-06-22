@@ -9,8 +9,6 @@ import {default as theme} from '../../../../theme.json';
 import {mockTasks} from '../../__tests__/fixtures';
 import AgendaHOC from '../AgendaHOC';
 import Agenda from '../../views/components/Agenda';
-import {startTask, updateTask} from '../../model/commands';
-import {addTimeLog} from '../../../logs/model/commands';
 import {mockLogs} from '../../../logs/__tests__/fixtures';
 
 jest.mock('@fortawesome/react-native-fontawesome', () => ({
@@ -30,7 +28,7 @@ describe('Agenda Controller', () => {
   const navigation = {
     isFocused: jest.fn(),
   };
-  it('Should render the component with props', () => {
+  it('Should render the wrapped component with props', () => {
     const WrappedComponent = (props) => AgendaHOC(Agenda, props);
     const {getByTestId, unmount} = render(
       <>

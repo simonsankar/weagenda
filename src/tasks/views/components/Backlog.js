@@ -70,6 +70,7 @@ export default ({
 
   return items.length ? (
     <List
+      testID={'BacklogLayout'}
       style={[styles.container, contentContainerStyle]}
       numColumns={1}
       data={items}
