@@ -42,10 +42,11 @@ export const getCurrentTask = createSelector(
   [getTasksByDate, currentTaskSelector],
   (tasks, currentTask) => {
     if (currentTask) {
+      console.log('Is this really the curr task?\n\n', currentTask);
       let currentTaskIndex = tasks.findIndex((task) => {
         return task.id === currentTask.id;
       });
-      return tasks[currentTaskIndex];
+      return {...tasks[currentTaskIndex], startTime: currentTask.startTime};
     }
     return null;
   },

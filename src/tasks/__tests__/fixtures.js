@@ -4,7 +4,7 @@ const today = moment();
 const futureDate = moment().add(2, 'days');
 
 export const mockTasks = {
-  currentTask: {},
+  currentTask: null,
   getById: {
     '36212c03-040b-4139-867f-bd76485f4084': {
       id: '36212c03-040b-4139-867f-bd76485f4084',

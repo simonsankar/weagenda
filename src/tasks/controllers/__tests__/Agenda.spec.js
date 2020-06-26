@@ -49,7 +49,7 @@ describe('Agenda Controller', () => {
     expect(myComponent).toBeTruthy();
     expect(myComponent.parent.props.navigation).toBeTruthy();
     expect(myComponent.parent.props.items).toBeArrayOfSize(4);
-    expect(myComponent.parent.props.currentItem).toEqual(undefined); // Update test when bug Fix is merged
+    expect(myComponent.parent.props.currentItem).toEqual(null); // Update test when bug Fix is merged
     expect(myComponent.parent.props.timeTotals).toBeArrayOfSize(4);
     expect(myComponent.parent.props.startTask).toBeTruthy();
     expect(myComponent.parent.props.setTaskCompletion).toBeTruthy();
