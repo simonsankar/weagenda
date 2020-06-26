@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import moment from 'moment';
 import {startTask, updateTask} from '../model/commands';
 import {addTimeLog} from '../../logs/model/commands';
-import {getTasksByDate} from '../model/selectors';
+import {getTasksByDate, getCurrentTask} from '../model/selectors';
 import {getTaskTimeSpentByDate} from '../../logs/model/selectors';
 
 const AgendaHOC = (WrappedComponent, props) => {
@@ -11,7 +11,7 @@ const AgendaHOC = (WrappedComponent, props) => {
   const dispatch = useDispatch();
   const componentState = {
     items: getTasksByDate(globalState, moment().format('YYYY-MM-DD')),
-    currentItem: globalState.tasks.currentTask,
+    currentItem: getCurrentTask(globalState),
     timeTotals: getTaskTimeSpentByDate(
       globalState,
       moment().format('YYYY-MM-DD'),
