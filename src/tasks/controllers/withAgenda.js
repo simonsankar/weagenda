@@ -19,7 +19,7 @@ const mapDispatchToProps = {
 };
 
 // This function takes a component...
-function withAgenda(WrappedComponent, props) {
+const withAgenda = (WrappedComponent, props) => {
   const Agenda = class Agenda extends Component {
     setTaskCompletion = (id, state = true) => {
       return new Promise((resolve) => {
@@ -27,6 +27,7 @@ function withAgenda(WrappedComponent, props) {
         resolve();
       });
     };
+
     startATask = (id) => {
       return new Promise((resolve) => {
         this.props.startTask(id);
@@ -34,15 +35,19 @@ function withAgenda(WrappedComponent, props) {
         resolve();
       });
     };
+
     render() {
       return (
-        <>
-          <WrappedComponent {...this.props} {...props} />
-        </>
+        <WrappedComponent
+          {...props}
+          {...this.props}
+          setTaskCompletion={this.setTaskCompletion}
+          startTask={this.startATask}
+        />
       );
     }
   };
   return connect(mapStateToProps, mapDispatchToProps)(Agenda);
-}
+};
 
 export default withAgenda;

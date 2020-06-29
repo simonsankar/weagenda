@@ -2,9 +2,9 @@ import React from 'react';
 import {StyleService, Tab, TabBar, useStyleSheet} from '@ui-kitten/components';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import TopBar from '../components/TopBar';
-import withAgenda from '../../controllers/Agenda';
+import withAgenda from '../../controllers/withAgenda';
 import Agenda from '../components/Agenda';
-import BacklogHOC from '../../controllers/BacklogHOC';
+import withBacklog from '../../controllers/withBacklog';
 import Backlog from '../components/Backlog';
 
 export default (props) => {
@@ -25,7 +25,6 @@ export default (props) => {
     </TabBar>
   );
 
-  const WrappedBacklog = (props) => BacklogHOC(Backlog, props);
   return (
     <>
       <TopBar navigation={navigation} />
@@ -33,7 +32,7 @@ export default (props) => {
         tabBar={(props) => <TopTabBar {...props} />}
         screenOptions={{gestureEnabled: false}}>
         <Tabs.Screen name="Today" component={withAgenda(Agenda)} />
-        <Tabs.Screen name="Backlog" component={WrappedBacklog} />
+        <Tabs.Screen name="Backlog" component={withBacklog(Backlog)} />
       </Tabs.Navigator>
     </>
   );
