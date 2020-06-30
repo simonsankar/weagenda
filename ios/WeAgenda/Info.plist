@@ -26,7 +26,7 @@
 				<key>CFBundleTypeRole</key>
 				<string>Editor</string>
 				<key>CFBundleURLName</key>
-				<string>https://appadoes.com</string>
+				<string>com.appadoes</string>
 				<key>CFBundleURLSchemes</key>
 				<array>
 					<string>https://appadoes.com</string>
