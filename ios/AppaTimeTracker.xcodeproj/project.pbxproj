@@ -79,6 +79,7 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F168FEF6E705B2523DA0B99E /* Pods-AppaTimeTracker-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppaTimeTracker-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-AppaTimeTracker-tvOS/Pods-AppaTimeTracker-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F69B63BB24AB97BF001574A5 /* Appa: Time Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Appa: Time Tracker.entitlements"; sourceTree = "<group>"; };
 		F84BEBA5F6006C0AD0040A1E /* Pods-WeAgenda-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeAgenda-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-WeAgenda-tvOSTests/Pods-WeAgenda-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FBF8732E2841DD97E51F09A0 /* Pods-AppaTimeTracker-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppaTimeTracker-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-AppaTimeTracker-tvOSTests/Pods-AppaTimeTracker-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +174,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F69B63BB24AB97BF001574A5 /* Appa: Time Tracker.entitlements */,
 				2CC231F024AA6A4C002B2EE0 /* Appa: Time TrackerRelease.entitlements */,
 				13B07FAE1A68108700A75B9A /* WeAgenda */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -665,6 +667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Appa: Time Tracker.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
