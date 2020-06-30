@@ -1,13 +1,13 @@
 import React from 'react';
 import List from './List';
-import DetailHOC from '../../controllers/DetailHOC';
+import withDetail from '../../controllers/withDetail';
 import Detail from './Detail';
 import {SafeAreaView} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 const {Navigator, Screen} = createStackNavigator();
 
-const WrappedDetail = (props) => DetailHOC(Detail, props);
+const WrappedDetail = withDetail(Detail);
 
 export default () => (
   <SafeAreaView style={{flex: 1}}>
