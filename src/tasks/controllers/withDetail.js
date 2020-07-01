@@ -1,9 +1,7 @@
 import React from 'react';
-import {useSelector, useDispatch, connect} from 'react-redux';
+import {connect} from 'react-redux';
 import moment from 'moment';
 import {addTask, removeTask, updateTask} from '../model/commands';
-
-import {getTaskTimeSpentByDate} from '../../logs/model/selectors';
 import {Component} from 'react';
 
 const mapStateToProps = (state) => ({
@@ -19,7 +17,7 @@ const withDetail = (WrappedComponent, props) => {
   const Detail = class extends Component {
     getTask = (id) => {
       return id !== undefined && id !== ''
-        ? tasks.getById[id]
+        ? this.props.tasks.getById[id]
         : {
             title: '',
             description: '',
@@ -44,7 +42,7 @@ const withDetail = (WrappedComponent, props) => {
           dueDate: dueDate,
           agendas: addToAgenda ? [moment().format('YYYY-MM-DD')] : [],
           estimatedTime:
-            estimatedUnit == 'minutes'
+            estimatedUnit === 'minutes'
               ? estimatedTime * 60
               : estimatedTime * 60 * 60,
           created: moment(),

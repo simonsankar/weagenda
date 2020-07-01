@@ -92,7 +92,7 @@ export default ({navigation, route, getTask, onSave, onUpdate, onRemove}) => {
   const datePicker = createRef();
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView testID={'DetailLayout'} style={styles.container}>
       <KeyboardAvoidingView style={styles.container}>
         <DetailTopBar
           navigation={navigation}
