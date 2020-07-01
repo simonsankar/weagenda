@@ -21,7 +21,7 @@ let store = mockStore({
   logs: mockLogs,
 });
 
-describe('Agenda Controller', () => {
+describe('Agenda HOC', () => {
   beforeEach(() => {
     store.clearActions();
   });
