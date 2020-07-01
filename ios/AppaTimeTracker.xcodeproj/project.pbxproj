@@ -19,10 +19,10 @@
 		2DCD954D1E0B4F2C00145EB5 /* WeAgendaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WeAgendaTests.m */; };
 		6FD2B4D55238613A1C0EC90D /* libPods-AppaTimeTracker-AppaTimeTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C2F64309E1694363AEEBDA /* libPods-AppaTimeTracker-AppaTimeTrackerTests.a */; };
 		B66732CE0A06E31625282573 /* libPods-AppaTimeTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 842ADAF75674BF10CEDB88C7 /* libPods-AppaTimeTracker.a */; };
+		B7C816E3CF3D4E3A96CC41C8 /* Geometria-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6173EA6953EC4FE09F0294EF /* Geometria-ExtraBold.ttf */; };
 		B9D2DADCA5344EF6BB13B746 /* Geometria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCEEBD3B3E8E49EB871C3C1E /* Geometria.ttf */; };
 		C21DE3B8E25AE65786AA2E52 /* libPods-AppaTimeTracker-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F4DB82305EDE5EBB9F2ABA /* libPods-AppaTimeTracker-tvOSTests.a */; };
 		CFDD7419506B4C40BA3D39F9 /* libPods-AppaTimeTracker-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A322909871775B3005D10A53 /* libPods-AppaTimeTracker-tvOS.a */; };
-		B7C816E3CF3D4E3A96CC41C8 /* Geometria-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6173EA6953EC4FE09F0294EF /* Geometria-ExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +61,7 @@
 		2D02E4901E0B4A5D006451C7 /* AppaTimeTracker-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppaTimeTracker-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		456824C387FB791269761FB8 /* Pods-AppaTimeTracker-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppaTimeTracker-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-AppaTimeTracker-tvOSTests/Pods-AppaTimeTracker-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		5DDC5DACCF537B0281007CB5 /* Pods-AppaTimeTracker-AppaTimeTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppaTimeTracker-AppaTimeTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-AppaTimeTracker-AppaTimeTrackerTests/Pods-AppaTimeTracker-AppaTimeTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		6173EA6953EC4FE09F0294EF /* Geometria-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Geometria-ExtraBold.ttf"; path = "../assets/fonts/Geometria-ExtraBold.ttf"; sourceTree = "<group>"; };
 		63EA6CB35916CB2E7C8AA7FC /* Pods-AppaTimeTracker-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppaTimeTracker-tvOS.release.xcconfig"; path = "Target Support Files/Pods-AppaTimeTracker-tvOS/Pods-AppaTimeTracker-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		753563E52A6A43C88601AC82 /* Geometria-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Geometria-Light.ttf"; path = "../assets/fonts/Geometria-Light.ttf"; sourceTree = "<group>"; };
 		79F4DB82305EDE5EBB9F2ABA /* libPods-AppaTimeTracker-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppaTimeTracker-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +84,6 @@
 		F69B63BB24AB97BF001574A5 /* Appa: Time Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Appa: Time Tracker.entitlements"; sourceTree = "<group>"; };
 		F84BEBA5F6006C0AD0040A1E /* Pods-WeAgenda-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeAgenda-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-WeAgenda-tvOSTests/Pods-WeAgenda-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FBF8732E2841DD97E51F09A0 /* Pods-AppaTimeTracker-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppaTimeTracker-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-AppaTimeTracker-tvOSTests/Pods-AppaTimeTracker-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6173EA6953EC4FE09F0294EF /* Geometria-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Geometria-ExtraBold.ttf"; path = "../assets/fonts/Geometria-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
