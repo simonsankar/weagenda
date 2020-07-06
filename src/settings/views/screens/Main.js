@@ -40,8 +40,6 @@ export default ({
         console.log('Any url?', url);
         if (url) {
           handleOpenUrl(url, 'Settings');
-          // evaluate every incoming URL
-          DeepLinking.evaluateUrl(event.url);
         }
       })
       .catch((error) => console.log('Errorz', error));
