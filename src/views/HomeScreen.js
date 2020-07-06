@@ -12,7 +12,6 @@ import Onboarding from '../onboarding/views/screens/Main';
 import Reports from '../reports/controllers/Main';
 import Settings from '../settings/views/screens/Main';
 import About from '../about/views/screens/Main';
-import Support from '../support/views/screens/Support';
 import Customize from '../customize/views/screens/Main';
 import {setToken, setUser} from '../weos/model/commands';
 import {onBoardUser} from '../onboarding/model/commands';
@@ -73,8 +72,7 @@ const HomeScreen = ({
         <Screen name="Agenda" component={Tasks} />
         <Screen name="Logs" component={Logs} />
         <Screen name="Reports" component={Reports} />
-        <Screen name="Settings" component={WrappedSettings} />
-        <Screen name="Support" component={Support} />
+        <Screen name="Settings" component={Settings} />
         <Screen name="About" component={About} />
         <Screen name="Customize" component={Customize} />
       </Navigator>
