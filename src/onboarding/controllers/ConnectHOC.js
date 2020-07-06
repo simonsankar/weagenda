@@ -61,6 +61,7 @@ const ConnectHOC = (WrappedComponent, props) => {
    * @param {string} urlString - Url returned by PKCE
    */
   const handleOpenUrl = async (screen, urlString) => {
+    console.log('Called', urlString);
     const url = new URL(urlString.url, true);
     const {code, state, confirm_creation} = url.query;
 

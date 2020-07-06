@@ -23,6 +23,7 @@
 		B9D2DADCA5344EF6BB13B746 /* Geometria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCEEBD3B3E8E49EB871C3C1E /* Geometria.ttf */; };
 		C21DE3B8E25AE65786AA2E52 /* libPods-AppaTimeTracker-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F4DB82305EDE5EBB9F2ABA /* libPods-AppaTimeTracker-tvOSTests.a */; };
 		CFDD7419506B4C40BA3D39F9 /* libPods-AppaTimeTracker-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A322909871775B3005D10A53 /* libPods-AppaTimeTracker-tvOS.a */; };
+		F62F20DA24B3697500603BFA /* Appa: Time Tracker.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = F69B63BB24AB97BF001574A5 /* Appa: Time Tracker.entitlements */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -332,7 +333,7 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 2PNFD8677U;
 						LastSwiftMigration = 1120;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -377,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F62F20DA24B3697500603BFA /* Appa: Time Tracker.entitlements in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				02C750B4BBE144508FDE2693 /* Geometria-Light.ttf in Resources */,
@@ -672,8 +674,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Appa: Time Tracker.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2PNFD8677U;
 				ENABLE_BITCODE = NO;
@@ -691,7 +693,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appadoes;
 				PRODUCT_NAME = "Appa: Time Tracker";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Appa Does";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

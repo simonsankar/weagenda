@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import DeepLinking from 'react-native-deep-linking';
 import {Platform, Linking} from 'react-native';
 import {SafeAreaView, ScrollView} from 'react-native';
 import {ThemeContext} from '../../../../theme.context';
@@ -31,13 +32,19 @@ export default ({
   const {user} = componentState;
   handleOpenUrl = handleOpenUrl.bind(null, 'Settings');
 
+  DeepLinking.addScheme('appadoes://');
   useEffect(() => {
     Linking.addEventListener('url', handleOpenUrl);
-    Linking.getInitialURL().then((url) => {
-      if (url) {
-        handleOpenUrl(url, 'Settings');
-      }
-    });
+    Linking.getInitialURL()
+      .then((url) => {
+        console.log('Any url?', url);
+        if (url) {
+          handleOpenUrl(url, 'Settings');
+          // evaluate every incoming URL
+          DeepLinking.evaluateUrl(event.url);
+        }
+      })
+      .catch((error) => console.log('Errorz', error));
 
     return () => {
       return Linking.removeEventListener('url', handleOpenUrl);
